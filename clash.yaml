@@ -38,9 +38,14 @@ proxies:
   - {name: 🇺🇸 US-Happy-Websocket-6knwq5rl, server: udeal.store, port: 12304, type: vmess, uuid: 8e839934-b8ef-4a58-b174-4fd5bf722161, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: udeal.store, network: ws, ws-opts: {path: /, headers: {Host: udeal.store}}, udp: true}
   - {name: 🇺🇸 US-Happy-TCP-jncla4be, server: udeal.store, port: 52494, type: vmess, uuid: 32f7df51-dba6-4c38-ab98-f0206cde7a81, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: udeal.store, udp: true}
   - {name: 德国ISP01, server: 45.91.199.232, port: 2024, type: socks5, username: Xuhappy, password: xu015106., udp: true}
-  - {name: 美国-芝加哥-Node-ISP01, server: us154.kookeey.info, port: 20478, type: socks5, username: Xuhappy, password: Xu015106., udp: true}
+  - {name: 美国芝加哥ISP, server: us154.kookeey.info, port: 20478, type: socks5, username: Xuhappy, password: Xu015106., udp: true}
 
 proxy-groups:
+  - name: 美国-芝加哥ISP01
+    type: relay
+    proxies: 
+      - ♻️ 链式代理自动选择
+      - 美国芝加哥ISP
   - name: 德国住宅IP001
     type: relay
     proxies: 
@@ -57,6 +62,7 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇸🇬 加坡节点
       - 🇺🇲 美国节点
+      - 🏡 VPS节点
       - DIRECT
   - name: 🏡 VPS节点
     type: select
@@ -104,11 +110,8 @@ proxy-groups:
       - 🇻🇳 hx2-越南a-1
       - 🇲🇾 hx2-马来西亚
       - 🇲🇾 hx2马来西亚b -
-  - name: 美国-芝加哥ISP01
-    type: relay
-    proxies: 
-      - ♻️ 链式代理自动选择
-      - 美国-芝加哥-Node-ISP01
+      - 🇺🇸 US-Happy-Websocket-6knwq5rl
+      - 🇺🇸 US-Happy-TCP-jncla4be
   - name: 🚀 节点选择
     type: select
     proxies:
@@ -214,13 +217,9 @@ proxy-groups:
       - 🇸🇬 加坡节点
       - 🐸 手动切换
 rules:
-  - SRC-IP-CIDR,192.168.10.100/32,美国-芝加哥ISP01
-  - SRC-IP-CIDR,192.168.10.101/32,美国-芝加哥ISP01
-  - SRC-IP-CIDR,192.168.10.102/32,美国-芝加哥ISP01
-  - SRC-IP-CIDR,192.168.10.103/32,美国-芝加哥ISP01
-  - SRC-IP-CIDR,192.168.10.104/32,美国-芝加哥ISP01
-  - SRC-IP-CIDR,192.168.10.105/32,美国-芝加哥ISP01
-  - SRC-IP-CIDR,192.168.10.169/32,德国住宅IP001
+  - SRC-IP-CIDR,192.168.10.221/32,美国-芝加哥ISP01
+  - SRC-IP-CIDR,192.168.10.222/32,美国-芝加哥ISP01
+  - SRC-IP-CIDR,192.168.10.223/32,美国-芝加哥ISP01
   - DOMAIN-KEYWORD,youtube,📹 YouTubeGoogle
   - DOMAIN,youtubei.googleapis.com,📹 YouTubeGoogle
   - DOMAIN,yt3.ggpht.com,📹 YouTubeGoogle
